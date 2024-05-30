@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.vb1d41</groupId>
+  <artifactId>byzday</artifactId>
+  <version>1.0.0</version>
+
+  <name>ByzDay</name>
+  <description>
+    ByzDay is a Java console app that shows the date in the Byzantine calendar.
+  </description>
+  <url>https://github.com/vb1d41/byzday</url>
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    
+    <x.minRequiredMavenVersion>3.6.3</x.minRequiredMavenVersion>
+
+    <x.byzcalVersion>1.2.0</x.byzcalVersion>
+
+    <x.dependencyPluginVersion>3.6.1</x.dependencyPluginVersion>
+    <x.cleanPluginVersion>3.3.2</x.cleanPluginVersion>
+    <x.resourcesPluginVersion>3.3.1</x.resourcesPluginVersion>
+    <x.compilerPluginVersion>3.13.0</x.compilerPluginVersion>
+    <x.surefirePluginVersion>3.2.5</x.surefirePluginVersion>
+    <x.jarPluginVersion>3.4.1</x.jarPluginVersion>
+
+    <x.assemblyPluginVersion>3.7.1</x.assemblyPluginVersion>
+    <x.enforcerPluginVersion>3.4.1</x.enforcerPluginVersion>
+    <x.pmdPluginVersion>3.22.0</x.pmdPluginVersion>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.vb1d41</groupId>
+      <artifactId>byzcal</artifactId>
+      <version>${x.byzcalVersion}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${x.dependencyPluginVersion}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${x.cleanPluginVersion}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${x.resourcesPluginVersion}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${x.compilerPluginVersion}</version>
+          <configuration>
+            <compilerArgs>
+              <arg>-Werror</arg>
+              <arg>-Xlint</arg>
+            </compilerArgs>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${x.surefirePluginVersion}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${x.jarPluginVersion}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>
+                ${project.groupId}.${project.artifactId}.${project.name}
+              </mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>${x.assemblyPluginVersion}</version>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <inlineDescriptors>
+                <inlineDescriptor>
+                  <id>bin</id>
+                  <formats>
+                    <format>zip</format>
+                  </formats>
+                  <includeBaseDirectory>false</includeBaseDirectory>
+                  <dependencySets>
+                    <dependencySet/>
+                  </dependencySets>
+                </inlineDescriptor>
+              </inlineDescriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${x.enforcerPluginVersion}</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>${x.minRequiredMavenVersion}</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${x.pmdPluginVersion}</version>
+        <configuration>
+          <failOnViolation>true</failOnViolation>
+          <printFailingErrors>true</printFailingErrors>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
