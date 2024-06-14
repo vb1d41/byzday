@@ -1,10 +1,30 @@
+/*
+ * Copyright 2024 vb1d41
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package io.github.vb1d41.byzday;
 
 import io.github.vb1d41.byzcal.ByzDate;
 
 import java.time.format.DateTimeParseException;
 import java.time.LocalDate;
+import java.util.Arrays;
 
+/**
+ * @version 1.0.1
+ */
 public class ByzDay {
     public static void main(String[] args) {
         System.exit(process(args));
@@ -18,11 +38,10 @@ public class ByzDay {
     }
 
     private static boolean helpRequested(String[] args) {
-        for (String arg : args)
-            if (arg.equals("-h") || arg.equals("--help"))
-                return true;
-
-        return false;
+        return Arrays.asList(args)
+            .stream()
+            .filter(s -> s.equals("-h") || s.equals("--help"))
+            .count() > 0;
     }
 
     private static int printHelp() {

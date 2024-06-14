@@ -6,7 +6,7 @@
 
   <groupId>io.github.vb1d41</groupId>
   <artifactId>byzday</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>ByzDay</name>
   <description>
@@ -28,16 +28,16 @@
 
     <x.byzcalVersion>1.2.0</x.byzcalVersion>
 
-    <x.dependencyPluginVersion>3.6.1</x.dependencyPluginVersion>
+    <x.dependencyPluginVersion>3.7.0</x.dependencyPluginVersion>
     <x.cleanPluginVersion>3.3.2</x.cleanPluginVersion>
     <x.resourcesPluginVersion>3.3.1</x.resourcesPluginVersion>
     <x.compilerPluginVersion>3.13.0</x.compilerPluginVersion>
-    <x.surefirePluginVersion>3.2.5</x.surefirePluginVersion>
+    <x.surefirePluginVersion>3.3.0</x.surefirePluginVersion>
     <x.jarPluginVersion>3.4.1</x.jarPluginVersion>
 
     <x.assemblyPluginVersion>3.7.1</x.assemblyPluginVersion>
-    <x.enforcerPluginVersion>3.4.1</x.enforcerPluginVersion>
-    <x.pmdPluginVersion>3.22.0</x.pmdPluginVersion>
+    <x.enforcerPluginVersion>3.5.0</x.enforcerPluginVersion>
+    <x.pmdPluginVersion>3.23.0</x.pmdPluginVersion>
   </properties>
 
   <dependencies>
