@@ -23,7 +23,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 /**
- * @version 1.0.1
+ * @version 1.0.2
  */
 public class ByzDay {
     public static void main(String[] args) {
@@ -38,10 +38,7 @@ public class ByzDay {
     }
 
     private static boolean helpRequested(String[] args) {
-        return Arrays.asList(args)
-            .stream()
-            .filter(s -> s.equals("-h") || s.equals("--help"))
-            .count() > 0;
+        return Arrays.stream(args).anyMatch(s -> s.equals("-h") || s.equals("--help"));
     }
 
     private static int printHelp() {
