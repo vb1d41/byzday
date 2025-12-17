@@ -28,16 +28,16 @@
 
     <x.byzcalVersion>1.2.0</x.byzcalVersion>
 
-    <x.dependencyPluginVersion>3.7.0</x.dependencyPluginVersion>
-    <x.cleanPluginVersion>3.3.2</x.cleanPluginVersion>
-    <x.resourcesPluginVersion>3.3.1</x.resourcesPluginVersion>
-    <x.compilerPluginVersion>3.13.0</x.compilerPluginVersion>
-    <x.surefirePluginVersion>3.3.0</x.surefirePluginVersion>
-    <x.jarPluginVersion>3.4.1</x.jarPluginVersion>
+    <x.dependencyPluginVersion>3.9.0</x.dependencyPluginVersion>
+    <x.cleanPluginVersion>3.5.0</x.cleanPluginVersion>
+    <x.resourcesPluginVersion>3.4.0</x.resourcesPluginVersion>
+    <x.compilerPluginVersion>3.14.1</x.compilerPluginVersion>
+    <x.surefirePluginVersion>3.5.4</x.surefirePluginVersion>
+    <x.jarPluginVersion>3.5.0</x.jarPluginVersion>
 
-    <x.assemblyPluginVersion>3.7.1</x.assemblyPluginVersion>
-    <x.enforcerPluginVersion>3.5.0</x.enforcerPluginVersion>
-    <x.pmdPluginVersion>3.23.0</x.pmdPluginVersion>
+    <x.assemblyPluginVersion>3.8.0</x.assemblyPluginVersion>
+    <x.enforcerPluginVersion>3.6.2</x.enforcerPluginVersion>
+    <x.pmdPluginVersion>3.28.0</x.pmdPluginVersion>
   </properties>
 
   <dependencies>
